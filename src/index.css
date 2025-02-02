@@ -1,0 +1,36 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  height: 90vh;
+  overflow-x: hidden;
+  font-family: "Montserrat", serif;
+  margin-top: 80px;
+  padding: 20px;
+}
+
+p {
+  font-size: 15px;
+}
+
+ul {
+  list-style: disc;
+}
+
+h2 {
+  font-weight: bold;
+  text-transform: uppercase;
+}
+
+@media screen and (min-width: 1024px) {
+  h2 {
+    font-size: 25px;
+  }
+}
