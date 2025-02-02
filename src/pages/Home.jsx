@@ -8,7 +8,6 @@ const Home = () => {
 
   return (
     <div className="flex flex-col h-[calc(100vh-80px)]">
-      {/* Primo div che occupa tutto lo spazio disponibile */}
       <div className="flex flex-col items-center justify-center flex-grow text-center pt-[70px] pb-[90px] px-8 md:px-28 lg:px-56">
         <img src={logo} alt="logo" className="w-[240px]" />
         <h2 className="capitalize text-2xl">
@@ -20,7 +19,6 @@ const Home = () => {
         </p>
       </div>
 
-      {/* Carosello fissato al fondo */}
       <div className="mt-auto">
         <h2 className="text-center uppercase font-bold mb-4">get inspired</h2>
         <RecipeCarousel recipes={randomRecipes} />

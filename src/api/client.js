@@ -1,7 +1,6 @@
 import axios from "axios"
 
 const API_KEY = "d185cf2724fe4f9b91d0c5ad3cdaba1c"
-// const API_KEY = "90f61b0dd7234b4f92e857ee2a99297e"
 const BASE_URL = "https://api.spoonacular.com"
 
 // fetches vegetarian recipes from a specified API endpoint and returns the results.
@@ -14,7 +13,6 @@ export const fetchRecipes = async () => {
         number: 200
       }
     })
-    console.log(response.data.results)
     return response.data.results
   } catch (error) {
     console.log(error)
@@ -32,7 +30,6 @@ export const fetchRandomRecipes = async () => {
         number: 10
       }
     })
-    console.log(response.data.results)
     return response.data.results
   } catch (error) {
     console.log(error)

@@ -28,7 +28,7 @@ const RecipesProvider = ({ children }) => {
     getRecipes()
   }, [])
 
-  // GET ONE RECIPE
+  // GET RANDOM RECIPES
   useEffect(() => {
     const getRandomRecipes = async () => {
       try {
