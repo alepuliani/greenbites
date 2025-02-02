@@ -27,8 +27,7 @@ const FavoriteRecipes = () => {
         >
           {favorites.map((recipe) => {
             return (
-              <div key={recipe.id} className="flex items-center justify-center">
-                {" "}
+              <div key={recipe.id} className="flex justify-center items-start">
                 <RecipeCard recipe={recipe} />
               </div>
             )
