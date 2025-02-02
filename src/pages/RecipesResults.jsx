@@ -12,8 +12,8 @@ const RecipesResults = () => {
   })
 
   return (
-    <div className="p-4 md:p-20 lg:px-36">
-      <h1 className="font-bold text-xl uppercase mb-3 ">
+    <div className="p-4 md:p-20 max-w-[1200px] mx-auto">
+      <h1 className="font-bold ml-4 text-xl uppercase mb-3">
         {" "}
         {searchValue[0].toUpperCase() +
           searchValue.slice(1, searchValue.lenght)}{" "}

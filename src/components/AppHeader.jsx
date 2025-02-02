@@ -42,11 +42,28 @@ const AppHeader = () => {
   return (
     <div ref={menuRef}>
       {" "}
-      <header className="bg-customGreen h-[80px] flex items-center justify-between px-5 fixed top-0 right-0 left-0 z-20">
+      <header className="bg-customGreen h-[80px] flex items-center justify-between px-5 fixed top-0 right-0 left-0 z-20 xl:px-36">
         {/* HOME BUTTON */}
         <Link to="/">
-          <img src={logo} alt="App Logo" className="h-[50px]" />
+          <img src={logo} alt="App Logo" className="h-[50px] lg:h-[70px]" />
         </Link>
+        {/* CENTER MENU */}
+        <div>
+          <ul className="hidden lg:flex  p-4 list-none font-bold text-customSand">
+            <li
+              className="hover:text-customSand/70 px-4 cursor-pointer"
+              onClick={closeMenu}
+            >
+              <Link to="/">Home</Link>
+            </li>
+            <li
+              className="hover:text-customSand/70 px-4 cursor-pointer"
+              onClick={closeMenu}
+            >
+              <Link to="/favorites">Favorites</Link>
+            </li>
+          </ul>
+        </div>
         <div className="flex items-center">
           {/* SEARCH */}
           <div className="group">
@@ -75,25 +92,9 @@ const AppHeader = () => {
             {" "}
             <IoMenu onClick={toggleMenu} className="text-white text-3xl ml-5" />
           </button>
-          <div>
-            <ul className="hidden lg:flex  p-4 list-none font-bold text-customSand">
-              <li
-                className="hover:text-customSand/70 px-4 cursor-pointer"
-                onClick={closeMenu}
-              >
-                <Link to="/">Home</Link>
-              </li>
-              <li
-                className="hover:text-customSand/70 px-4 cursor-pointer"
-                onClick={closeMenu}
-              >
-                <Link to="/favorites">Favorites</Link>
-              </li>
-            </ul>
-          </div>
         </div>
       </header>
-      {/* MENU  */}
+      {/* MENU */}
       <div
         className={`fixed top-[80px] right-0 left-0 bg-customSand z-10 text-center transition-transform duration-300 ease-in-out ${
           menuOpen ? "translate-y-0" : "-translate-y-full"
