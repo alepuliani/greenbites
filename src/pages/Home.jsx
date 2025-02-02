@@ -15,9 +15,8 @@ const Home = () => {
           Where Every Bite Makes a Difference
         </h2>
         <p className="text-lg">
-          Discover the power of plant-based living with GreenBites, a platform
-          dedicated to promoting a healthier, more sustainable, and ethical way
-          of eating.
+          Explore a world of flavorful vegetarian recipes with Green Bites. Find
+          easy, healthy, and plant-based meals for every occasion.
         </p>
       </div>
 
