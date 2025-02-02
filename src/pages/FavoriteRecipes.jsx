@@ -34,7 +34,7 @@ const FavoriteRecipes = () => {
           })}{" "}
         </div>
       ) : (
-        <p className="text-center">No favorite recipes yet</p>
+        <p className="text-center">No favorite recipes yet!</p>
       )}
     </div>
   )
