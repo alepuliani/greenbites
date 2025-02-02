@@ -16,13 +16,11 @@ const RecipeCard = ({ recipe }) => {
   return (
     <button
       onClick={handleNavigation}
-      className="w-[170px] shrink-0 m-2 group cursor-pointer"
+      className="w-[120px] md:w-[170px] shrink-0 m-2 group cursor-pointer"
     >
       <div
         className={`relative rounded-md mb-2 ${
-          image
-            ? "h-[170px]"
-            : "h-[100px] bg-gray-200 flex items-center justify-center"
+          !image && " bg-gray-200 flex items-center justify-center"
         }`}
       >
         {" "}
@@ -30,7 +28,7 @@ const RecipeCard = ({ recipe }) => {
           <img
             src={image}
             alt={title + "image"}
-            className="h-[170px] object-cover rounded-md mb-2 "
+            className="h-[120px] md:h-[170px] object-cover rounded-md mb-2 "
           />
         ) : (
           <PiCookingPotLight className="w-full text-4xl" />

@@ -45,7 +45,7 @@ const AppHeader = () => {
       <header className="bg-customGreen h-[80px] flex items-center justify-between px-5 fixed top-0 right-0 left-0 z-20">
         {/* HOME BUTTON */}
         <Link to="/">
-          <img src={logo} alt="App Logo" className="h-[70px]" />
+          <img src={logo} alt="App Logo" className="h-[50px]" />
         </Link>
         <div className="flex items-center">
           {/* SEARCH */}
