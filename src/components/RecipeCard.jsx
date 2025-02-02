@@ -20,7 +20,7 @@ const RecipeCard = ({ recipe }) => {
     >
       <div
         className={`relative rounded-md mb-2 ${
-          !image && " bg-gray-200 flex items-center justify-center"
+          !image && "bg-gray-200 flex items-center justify-center"
         }`}
       >
         {" "}
