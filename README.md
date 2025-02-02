@@ -1,10 +1,10 @@
-# Green Bites
+# GreenBites
 
-Green Bites is a web application designed to explore and share delicious vegetarian recipes. It provides users with a collection of plant-based meals, interactive recipe cards, and an intuitive browsing experience.
+GreenBites is a web application designed to explore and share delicious vegetarian recipes. It provides users with a collection of plant-based meals, interactive recipe cards, and an intuitive browsing experience.
 
 🔗 [go to GreenBites](https://greenbites-recipebook.netlify.app/)
 
-Enjoy cooking with Green Bites! 🌱🍲
+Enjoy cooking with GreenBites! 🌱🍲
 
 ## Features
 
