@@ -1,6 +1,7 @@
 import { useContext, useEffect } from "react"
 import { RecipesContext } from "../context"
 import RecipeCard from "../components/RecipeCard"
+import { Helmet } from "react-helmet"
 
 const FavoriteRecipes = () => {
   const { favorites, setFavorites } = useContext(RecipesContext)
@@ -17,6 +18,13 @@ const FavoriteRecipes = () => {
 
   return (
     <div className="lg:px-36">
+      <Helmet>
+        <title>Your Favorite Recipes | Green Bites</title>
+        <meta
+          name="description"
+          content="Your collection of favorite vegetarian recipes at Green Bites. Keep track of the recipes you love!"
+        />
+      </Helmet>
       <h1 className="font-bold text-3xl px-7 capitalize my-7 text-center">
         favorite recipes{" "}
       </h1>
