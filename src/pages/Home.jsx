@@ -1,12 +1,20 @@
-import logo from "../assets/app-logo.png"
-import RecipeCarousel from "../components/RecipeCarousel"
-import { useContext } from "react"
-import { RecipesContext } from "../context"
 import { Helmet } from "react-helmet"
+import logo from "../assets/app-logo.png"
+import { useSelector, useDispatch } from "react-redux"
+import RecipeCarousel from "../components/RecipeCarousel"
+import { useEffect } from "react"
+import { getRecipes, getRandomRecipes } from "../store/slices/recipesSlice"
 
 const Home = () => {
-  const { randomRecipes } = useContext(RecipesContext)
+  const dispatch = useDispatch()
 
+  useEffect(() => {
+    dispatch(getRecipes())
+    dispatch(getRandomRecipes())
+  }, [dispatch])
+
+  const { randomRecipes } = useSelector((state) => state.recipes)
+  console.log(randomRecipes)
   return (
     <div className="flex flex-col h-[calc(100vh-80px)]">
       <Helmet>

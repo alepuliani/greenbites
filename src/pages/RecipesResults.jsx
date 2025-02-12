@@ -1,12 +1,12 @@
-import { useContext } from "react"
-import { RecipesContext } from "../context"
-import RecipeCard from "../components/RecipeCard"
 import { ClipLoader } from "react-spinners"
 import { Helmet } from "react-helmet"
+import { useSelector } from "react-redux"
+import RecipeCard from "../components/RecipeCard"
 
 const RecipesResults = () => {
-  const { searchValue, recipes, loading } = useContext(RecipesContext)
-
+  const { recipes, loading, searchValue } = useSelector(
+    (state) => state.recipes
+  )
   // filtering the `recipes` array based on a search value provided by the user
   const filteredRecipes = recipes.filter((recipe) => {
     const correctSearchValue = searchValue.trim().toLowerCase()

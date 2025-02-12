@@ -1,19 +1,22 @@
-import { useParams } from "react-router-dom"
 import { FaRegHeart } from "react-icons/fa"
 import { FaHeart } from "react-icons/fa6"
-import { useState, useEffect } from "react"
-import { fetchRecipe } from "../api/client"
-import { useContext } from "react"
-import { RecipesContext } from "../context"
 import { ClipLoader } from "react-spinners"
 import { Helmet } from "react-helmet"
+import { useParams } from "react-router-dom"
+import { useState, useEffect } from "react"
+import { useDispatch, useSelector } from "react-redux"
+import { fetchRecipe } from "../api/client"
+import { addFavorite, removeFavorite } from "../store/slices/favoritesSlice"
 
 const RecipeDetails = () => {
   const [recipe, setRecipe] = useState({})
   const [favorite, setFavorite] = useState(false)
 
+  const { favorites } = useSelector((state) => state.favorites)
+  const { loading } = useSelector((state) => state.recipes)
+  const dispatch = useDispatch()
+
   const { id } = useParams()
-  const { favorites, setFavorites, loading } = useContext(RecipesContext)
 
   const recipeInfoStyle =
     "capitalize rounded-full bg-customGreen text-white px-2 py-1 mx-1 text-xs lg:text-lg"
@@ -32,10 +35,10 @@ const RecipeDetails = () => {
   // Adds or removes the recipe from favorites
   const toggleFavorite = () => {
     if (!favorite) {
-      setFavorites([...favorites, recipe])
+      dispatch(addFavorite(recipe))
       setFavorite(true)
     } else {
-      setFavorites(favorites.filter((favorite) => favorite.id !== recipe.id))
+      dispatch(removeFavorite(recipe.id))
       setFavorite(false)
     }
   }
@@ -48,11 +51,6 @@ const RecipeDetails = () => {
     }
     getRecipe()
   }, [id])
-
-  // Updates local storage whenever the favorites list changes
-  useEffect(() => {
-    localStorage.setItem("recipes", JSON.stringify(favorites))
-  }, [favorites])
 
   // Checks if the recipe is in the favorites list
   useEffect(() => {

@@ -1,21 +1,9 @@
-import { useContext, useEffect } from "react"
-import { RecipesContext } from "../context"
+import { useSelector } from "react-redux"
 import RecipeCard from "../components/RecipeCard"
 import { Helmet } from "react-helmet"
 
 const FavoriteRecipes = () => {
-  const { favorites, setFavorites } = useContext(RecipesContext)
-
-  const getLocalStorage = () => {
-    const data = JSON.parse(localStorage.getItem("recipes"))
-    if (data) {
-      setFavorites(data)
-    }
-  }
-  useEffect(() => {
-    getLocalStorage()
-  }, [])
-
+  const { favorites } = useSelector((state) => state.favorites)
   return (
     <div className="lg:px-36">
       <Helmet>

@@ -2,17 +2,18 @@ import logo from "../assets/app-logo.png"
 import { FaSearch, FaArrowRight } from "react-icons/fa"
 import { IoMenu } from "react-icons/io5"
 import { Link, useNavigate } from "react-router-dom"
-import { useContext, useState, useRef, useEffect } from "react"
-import { RecipesContext } from "../context"
+import { useState, useRef, useEffect } from "react"
+import { useDispatch } from "react-redux"
+import { setSearchValue } from "../store/slices/recipesSlice"
 
 const AppHeader = () => {
   const navigate = useNavigate()
-  const { setSearchValue, menuOpen, setMenuOpen } = useContext(RecipesContext)
   const [searchTerm, setSearchTerm] = useState("")
   const menuRef = useRef(null)
   const inputRef = useRef(null)
+  const [menuOpen, setMenuOpen] = useState(false)
   const closeMenu = () => setMenuOpen(false)
-
+  const dispatch = useDispatch()
   // handling clicks outside of a specific menu element
   useEffect(() => {
     const handleClickOutside = (e) => {
@@ -30,7 +31,7 @@ const AppHeader = () => {
   const handleSearchRecipe = (e) => {
     e.preventDefault()
     if (searchTerm !== "") {
-      setSearchValue(searchTerm)
+      dispatch(setSearchValue(searchTerm))
       navigate("/recipes")
       setSearchTerm("")
     }

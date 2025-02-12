@@ -1,11 +1,10 @@
 import PropTypes from "prop-types"
 import RecipeCard from "./RecipeCard"
-import { useContext } from "react"
-import { RecipesContext } from "../context"
 import { ClipLoader } from "react-spinners"
+import { useSelector } from "react-redux"
 
 const RecipeCarousel = ({ recipes }) => {
-  const { loading } = useContext(RecipesContext)
+  const { loading } = useSelector((state) => state.recipes)
   return (
     <div className="w-full">
       <div>
