@@ -25,7 +25,7 @@ Enjoy cooking with GreenBites! 🌱🍲
 - _FavoriteRecipes.jsx_: Displays the user’s favorite recipes saved in local storage.
 - _RecipeDetails.js_: Displays detailed information about a selected recipe, including ingredients and preparation steps.
 
-3. **React Context API**: Centralized state management is handled with React Context, ensuring consistent data management across components and routes.
+3. **Redux**: Centralized state management is handled with Redux, ensuring consistent data management across components and routes.
 
 4. **Axios**: For making API requests to fetch recipe data.
 
